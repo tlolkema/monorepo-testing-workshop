@@ -6,6 +6,7 @@
     "lint": "turbo lint",
     "clean": "turbo clean",
     "test": "turbo test",
+    "e2e": "turbo e2e",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
