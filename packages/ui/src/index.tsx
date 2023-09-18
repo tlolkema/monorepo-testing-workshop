@@ -2,4 +2,5 @@
 import "./styles.css";
 
 // components
-export * from "./card";
+export * from "./atoms/heading";
+export * from "./molecules/card";
