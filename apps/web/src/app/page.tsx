@@ -1,39 +1,22 @@
-import { Card } from "ui";
+import { Deals } from "ui";
 
 const LINKS = [
   {
-    title: "Docs",
-    href: "https://turbo.build/repo/docs",
-    description: "Find in-depth information about Turborepo features and API.",
-  },
-  {
-    title: "Learn",
-    href: "https://turbo.build/repo/docs/handbook",
-    description: "Learn more about monorepos with our handbook.",
-  },
-  {
-    title: "Templates",
+    title: "Summer Deal!",
     href: "https://turbo.build/repo/docs/getting-started/from-example",
-    description: "Choose from over 15 examples and deploy with a single click.",
+    description: "Become a test automation guru for only $99!",
   },
   {
-    title: "Deploy",
+    title: "2 for 1 Deal!",
     href: "https://vercel.com/new",
-    description:
-      " Instantly deploy your Turborepo to a shareable URL with Vercel.",
+    description: "Get 2 for 1 on all TURBO plans!",
   },
 ];
 
 export default function Page(): JSX.Element {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        {LINKS.map(({ title, href, description }) => (
-          <Card href={href} key={title} title={title}>
-            {description}
-          </Card>
-        ))}
-      </div>
+      <Deals links={LINKS} />
     </main>
   );
 }
