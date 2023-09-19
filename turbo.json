@@ -23,7 +23,7 @@
       "inputs": ["src/**/*.tsx", "src/**/*.ts"]
     },
     "e2e": {
-      "cache": true,
+      "cache": false,
       "persistent": true,
       "inputs": ["tests/**/*.ts"]
     }

@@ -40,6 +40,7 @@ module.exports = {
   ignorePatterns: ["node_modules/", "dist/"],
   // add rules configurations here
   rules: {
+    "turbo/no-undeclared-env-vars": "off",
     "import/no-default-export": "off",
   },
 };
