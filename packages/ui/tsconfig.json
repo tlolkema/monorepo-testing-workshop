@@ -3,11 +3,6 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "types": [
-      "node",
-      "jest",
-      "@testing-library/jest-dom",
-      "@testing-library/react"
-    ]
+    "types": ["vitest", "@testing-library/jest-dom", "@testing-library/react"]
   }
 }

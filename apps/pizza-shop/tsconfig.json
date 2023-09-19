@@ -4,7 +4,8 @@
     "plugins": [{ "name": "next" }],
     "baseUrl": ".",
     "paths": {
-      "e2e-tests/*": ["../../packages/e2e-tests/*"]
+      "e2e-tests/*": ["../../packages/e2e-tests/*"],
+      "ui/*": ["../../packages/ui/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

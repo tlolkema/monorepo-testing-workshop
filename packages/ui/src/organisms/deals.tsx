@@ -1,11 +1,6 @@
 import { Heading } from "../atoms/heading";
 import { Card } from "../molecules/card";
-
-interface Link {
-  title: string;
-  href: string;
-  description: string;
-}
+import type { Link } from "../types/types";
 
 export function Deals({
   links,
