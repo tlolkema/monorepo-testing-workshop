@@ -40,9 +40,6 @@ jobs:
       - name: Show preview url
         run: echo ${{ needs.vercel-pizza.outputs.preview_url }}
 
-      # - name: Install Playwright Browsers
-      #   run: npx playwright install --with-deps
-
       - name: Run Playwright tests
         run: pnpm --filter pizza-shop run e2e
         env:
