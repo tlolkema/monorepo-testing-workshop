@@ -1,4 +1,4 @@
-# Monorepo testing with Vercel
+# Turborepo testing with Vercel
 
 ## Prerequisites
 
