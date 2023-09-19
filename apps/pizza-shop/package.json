@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3001",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "e2e": "playwright test"
   },
   "dependencies": {
+    "@playwright/browser-chromium": "^1.38.0",
     "e2e-tests": "workspace:*",
     "next": "^13.4.19",
     "playwright": "^1.38.0",
