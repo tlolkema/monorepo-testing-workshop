@@ -1,51 +1,54 @@
-# Turborepo Tailwind CSS starter
+# Monorepo testing with Vercel
 
-This is an official starter Turborepo.
+## Prerequisites
 
-## Using this example
+Make sure to have the following installed:
 
-Run the following command:
+- [Node.js](https://nodejs.org/en/download/)
+- [pnpm](https://pnpm.io/installation)
+- [git](https://git-scm.com/downloads)
 
-```sh
-npx create-turbo@latest -e with-tailwind
+## Installation
+
+```bash
+pnpm install
 ```
 
-## What's inside?
+## Running the application
 
-This Turborepo includes the following packages/apps:
-
-### Apps and Packages
-
-- `docs`: a [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `web`: another [Next.js](https://nextjs.org/) app with [Tailwind CSS](https://tailwindcss.com/)
-- `ui`: a stub React component library with [Tailwind CSS](https://tailwindcss.com/) shared by both `web` and `docs` applications
-- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
-- `tsconfig`: `tsconfig.json`s used throughout the monorepo
-
-Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
-
-### Building packages/ui
-
-This example is setup to build `packages/ui` and output the transpiled source and compiled styles to `dist/`. This was chosen to make sharing one `tailwind.config.js` as easy as possible, and to ensure only the CSS that is used by the current application and its dependencies is generated.
-
-Another option is to consume `packages/ui` directly from source without building. If using this option, you will need to update your `tailwind.config.js` to be aware of your package locations, so it can find all usages of the `tailwindcss` class names.
-
-For example, in [tailwind.config.js](packages/tailwind-config/tailwind.config.js):
-
-```js
-  content: [
-    // app content
-    `src/**/*.{js,ts,jsx,tsx}`,
-    // include packages if not transpiling
-    "../../packages/**/*.{js,ts,jsx,tsx}",
-  ],
+```bash
+pnpm dev
 ```
 
-### Utilities
+## Workshop part 1
 
-This Turborepo has some additional tools already setup for you:
+### Task 1
 
-- [Tailwind CSS](https://tailwindcss.com/) for styles
-- [TypeScript](https://www.typescriptlang.org/) for static type checking
-- [ESLint](https://eslint.org/) for code linting
-- [Prettier](https://prettier.io) for code formatting
+- Expand the `turbo.json` with a test script.
+- Ensure that caching is enabled.
+- Specify that changes in a `.tsx` or `.ts` file should result in a cache miss.
+- Run the pipeline using `pnpm test`.
+- Run the pipeline again; it should be much faster, indicating a `FULL TURBO` mode.
+- Make a modification in a `.tsx` or `.ts` file.
+- Run the pipeline again; this should result in a cache miss, causing the test to run again.
+
+### Task 2
+
+- The monorepo contains 2 applications:
+  - `pizza-shop`
+  - `test-automation`
+- The `test-automation` application contains a contact page that is not present in the other application.
+- Write an E2E Playwright test to navigate to the contact page and click on the button.
+- Execute this test only for the `test-automation` application.
+- Run the test by running `pnpm dev` and `pnpm e2e` in separate terminal screens.
+
+### Task 3 (Bonus)
+
+- Write a `Vitest` component test for the other UI elements.
+
+### Task 4 (Bonus)
+
+- Run only the E2E tests for the `pizza-shop` application:
+  [Filtering E2E Tests](https://turbo.build/repo/docs/core-concepts/monorepos/filtering)
+
+## Workshop part 2
