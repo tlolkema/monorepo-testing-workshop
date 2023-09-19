@@ -14,6 +14,10 @@ Make sure to have the following installed:
 pnpm install
 ```
 
+```bash
+pnpm exec playwright install
+```
+
 ## Running the application
 
 ```bash
