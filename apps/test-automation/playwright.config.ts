@@ -3,7 +3,7 @@ import { defineConfig, devices } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests",
   fullyParallel: true,
-  reporter: "html",
+  reporter: [["line"], ["html"]],
   use: {
     baseURL: process.env.PLAYWRIGHT_BASE_URL
       ? process.env.PLAYWRIGHT_BASE_URL
