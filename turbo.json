@@ -17,11 +17,6 @@
     "clean": {
       "cache": false
     },
-    "test": {
-      "cache": true,
-      "persistent": true,
-      "inputs": ["src/**/*.tsx", "src/**/*.ts"]
-    },
     "e2e": {
       "cache": false,
       "persistent": true,
