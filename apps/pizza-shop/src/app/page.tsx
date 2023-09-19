@@ -2,13 +2,13 @@ import { MainView } from "ui";
 
 const LINKS = [
   {
-    title: "Best Pizza in Town!",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
+    title: "🍕 Best Pizza in Town!",
+    href: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     description: "Get 2 pizzas for the price of 1!",
   },
   {
-    title: "Hawaiian Pizza!",
-    href: "https://vercel.com/new",
+    title: "🇮🇹 Hawaiian Pizza!",
+    href: "https://www.google.com/search?q=hawaii+pizza",
     description: "Italians love it!",
   },
 ];

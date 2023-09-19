@@ -2,14 +2,14 @@ import { MainView } from "ui";
 
 const LINKS = [
   {
-    title: "Summer Deal!",
-    href: "https://turbo.build/repo/docs/getting-started/from-example",
+    title: "🏖️ Summer Deal!",
+    href: "#",
     description: "Become a test automation guru for only $99!",
   },
   {
-    title: "2 for 1 Deal!",
-    href: "https://vercel.com/new",
-    description: "Get 2 for 1 on all TURBO plans!",
+    title: "💌 Contact Us!",
+    href: "/contact",
+    description: "Contact us for even better deals",
   },
 ];
 

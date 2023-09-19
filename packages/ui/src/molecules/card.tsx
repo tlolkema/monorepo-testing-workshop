@@ -15,7 +15,6 @@ export function Card({
       className="ui-group ui-rounded-lg ui-border ui-border-transparent ui-px-5 ui-py-4"
       href={href}
       rel="noopener noreferrer"
-      target="_blank"
     >
       <Heading title={title} />
       <p className="ui-m-0 ui-max-w-[30ch] ui-text-sm ui-opacity-50">
