@@ -1,6 +1,9 @@
 name: Playwright Test Automation
 on: [push]
 
+variabele:
+  url: ''
+
 jobs:
   vercel-ta:
     runs-on: ubuntu-latest
@@ -40,4 +43,4 @@ jobs:
       - name: Run Playwright tests
         run: pnpm --filter test-automation run e2e
         env:
-          PLAYWRIGHT_BASE_URL: ${{ needs.vercel-ta.outputs.preview_url }}
+          PLAYWRIGHT_BASE_URL: https://monorepo-testing-workshop-pizza-shop-rk3u4z853-joep-detestersnl.vercel.app/
