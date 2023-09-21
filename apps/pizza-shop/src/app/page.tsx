@@ -11,6 +11,16 @@ const LINKS = [
     href: "https://www.google.com/search?q=hawaii+pizza",
     description: "Italians love it!",
   },
+  {
+    title: "🇮🇹 Pizza Calzone!",
+    href: "https://www.google.com/search?q=hawaii+calzone",
+    description: "Ghislain loves this!",
+  },
+  {
+    title: "🇮🇹 Pizza Testy!",
+    href: "https://www.google.com/search?q=hawaii+calzone",
+    description: "Ghislain loves this!",
+  },
 ];
 
 export default function Page(): JSX.Element {

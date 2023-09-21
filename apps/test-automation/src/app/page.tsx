@@ -11,6 +11,11 @@ const LINKS = [
     href: "/contact",
     description: "Contact us for even better deals",
   },
+  {
+    title: "💌 Ghislain is amazing",
+    href: "/Ghislain",
+    description: "Ghislain is amazing",
+  },
 ];
 
 export default function Page(): JSX.Element {

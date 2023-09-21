@@ -1,0 +1,46 @@
+name: Playwright Pizza Shop
+
+on: [pull_request]
+
+jobs:
+  vercel-pizza:
+    name: Wait for Vercel (pizza-shop)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    outputs:
+      preview_url: ${{ steps.waitForVercelPreviewDeployment.outputs.url }}
+    steps:
+      - name: Wait for Vercel pizza environment to be ready
+        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a #v1.3.1
+        id: waitForVercelPreviewDeployment
+        with:
+          environment: "Preview – monorepo-testing-workshop-pizza-shop"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          check_interval: 30
+          max_timeout: 400
+
+  playwright-pizza:
+    needs: vercel-pizza
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac #v4.0.0
+
+      - name: Pnpm install
+        uses: pnpm/action-setup@d882d12c64e032187b2edb46d3a0d003b7a43598 #v2.4.0
+        with:
+          run_install: true
+
+      - name: Setup node
+        uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d #v3.8.1
+        with:
+          node-version: 18
+          cache: "pnpm"
+
+      - name: Show preview url
+        run: echo ${{ needs.vercel-pizza.outputs.preview_url }}
+
+      - name: Run Playwright tests
+        run: pnpm --filter pizza-shop run e2e
+        env:
+          PLAYWRIGHT_BASE_URL: ${{ needs.vercel-pizza.outputs.preview_url }}

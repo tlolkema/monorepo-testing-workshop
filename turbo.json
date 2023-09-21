@@ -17,6 +17,11 @@
     "clean": {
       "cache": false
     },
+    "test": {
+      "dependsOn": ["^build"],
+      "cache": true,
+      "inputs": ["src/**/*.tsx", "src/**/ *.ts"]
+    },
     "e2e": {
       "cache": false,
       "persistent": true,
