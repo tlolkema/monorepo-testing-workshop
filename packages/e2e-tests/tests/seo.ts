@@ -6,3 +6,12 @@ export const shouldHavePageTitle = (options: { pageTitle: string }) => {
     await expect(page).toHaveTitle(options.pageTitle);
   });
 };
+
+
+//QUESTION: Store locators in apps or in testcase?
+export const shouldNavigateToContactPage = () => {
+  return test("Should navigate to contact page and click me button", async ({ page }) => {
+    await page.goto("/contact/");
+    await page.locator(`data-testid=contact-button`).click();
+  });
+};
