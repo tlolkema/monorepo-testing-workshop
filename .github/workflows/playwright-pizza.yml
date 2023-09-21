@@ -1,26 +1,26 @@
-name: Playwright Test Automation
+name: Playwright Pizza Shop
 
 on: [pull_request]
 
 jobs:
-  vercel-ta:
-    name: Wait for Vercel (test-automation)
+  vercel-pizza:
+    name: Wait for Vercel (pizza-shop)
     runs-on: ubuntu-latest
     timeout-minutes: 15
     outputs:
       preview_url: ${{ steps.waitForVercelPreviewDeployment.outputs.url }}
     steps:
-      - name: Wait for Vercel test automation environment to be ready
-        uses: patrickedqvist/wait-for-vercel-preview@1.3.1 #v1.3.1
+      - name: Wait for Vercel pizza environment to be ready
+        uses: patrickedqvist/wait-for-vercel-preview@dca4940010f36d2d44caa487087a09b57939b24a #v1.3.1
         id: waitForVercelPreviewDeployment
         with:
-          environment: "Preview – monorepo-testing-workshop-test-automation"
+          environment: "Preview – monorepo-testing-workshop-pizza-shop"
           token: ${{ secrets.GITHUB_TOKEN }}
           check_interval: 30
           max_timeout: 400
 
-  playwright-ta:
-    needs: vercel-ta
+  playwright-pizza:
+    needs: vercel-pizza
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -38,9 +38,9 @@ jobs:
           cache: "pnpm"
 
       - name: Show preview url
-        run: echo ${{ needs.vercel-ta.outputs.preview_url }}
+        run: echo ${{ needs.vercel-pizza.outputs.preview_url }}
 
       - name: Run Playwright tests
-        run: pnpm --filter test-automation run e2e
+        run: pnpm --filter pizza-shop run e2e
         env:
-          PLAYWRIGHT_BASE_URL: ${{ needs.vercel-ta.outputs.preview_url }}
+          PLAYWRIGHT_BASE_URL: ${{ needs.vercel-pizza.outputs.preview_url }}
