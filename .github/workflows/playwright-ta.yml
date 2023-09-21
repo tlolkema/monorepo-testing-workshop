@@ -6,12 +6,12 @@ jobs:
   vercel-ta:
     name: Wait for Vercel (test-automation) 
     steps:
-    uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
-    id: waitFor200
-    with:
-      token: ${{ secrets.GITHUB_TOKEN }}
-      max_timeout: 60
-  - run: echo ${{steps.waitFor200.outputs.url}}
+      uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
+      id: waitFor200
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        max_timeout: 60
+    - run: echo ${{steps.waitFor200.outputs.url}}
 
   playwright-ta:
     needs: vercel-ta
