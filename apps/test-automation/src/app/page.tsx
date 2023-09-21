@@ -4,7 +4,7 @@ const LINKS = [
   {
     title: "🏖️ Summer Deal!",
     href: "#",
-    description: "Become a test automation guru for only $99!",
+    description: "Become a test automation guru for only $9900000!",
   },
   {
     title: "💌 Contact Us!",

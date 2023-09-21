@@ -1,21 +1,21 @@
-name: Playwright Test Automation
+name: Playwright Pizza
 
 on: [pull_request]
 
 jobs:
-  vercel-ta:
+  vercel-pizza:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait for Vercel (test-automation)
+      - name: Wait for Vercel (pizza)
         uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
         id: waitFor200
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
-          environment: Preview – monorepo-testing-workshop-test-automation
+          environment: Preview – monorepo-testing-workshop-pizza-shop
 
   playwright-ta:
-    needs: vercel-ta
+    needs: vercel-pizza
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -36,6 +36,6 @@ jobs:
         run: echo ${{ needs.vercel-ta.outputs.preview_url }}
 
       - name: Run Playwright tests
-        run: pnpm --filter test-automation run e2e
+        run: pnpm --filter pizza-shop run e2e
         env:
           PLAYWRIGHT_BASE_URL: ${{ needs.vercel-ta.outputs.preview_url }}
