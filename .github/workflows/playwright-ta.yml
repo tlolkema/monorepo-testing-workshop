@@ -10,9 +10,9 @@ jobs:
         uses: patrickedqvist/wait-for-vercel-preview@v1.3.1
         id: waitFor200
         with:
-          token: ${{ secrets.test }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           max_timeout: 60
-  # access preview url
+      # access preview url
       - run: echo ${{steps.waitFor200.outputs.url}}
   # USE: https://github.com/patrickedqvist/wait-for-vercel-preview
 
@@ -33,7 +33,6 @@ playwright-ta:
       with:
         node-version: 18
         cache: "pnpm"
-
 
     - name: Show preview url
       run: echo ${{ needs.vercel-ta.outputs.preview_url }}
