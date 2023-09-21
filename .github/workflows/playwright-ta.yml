@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   vercel-ta:
+    runs-on: ubuntu-latest
     name: Wait for Vercel (test-automation)
     steps:
       - name: Waiting for 200 from the Vercel Preview
