@@ -9,6 +9,11 @@
     "lint": {
       "dependsOn": ["^build"]
     },
+    "test": {
+      "cache": true,
+      "inputs": ["**/*.ts", "**/*.tsx"],
+      "dependsOn": ["^build"]
+    },
     "check-types": {},
     "dev": {
       "cache": false,
