@@ -1,9 +1,6 @@
 name: Playwright Test Automation
 on: [push]
 
-variabele:
-  url: ''
-
 jobs:
   vercel-ta:
     runs-on: ubuntu-latest
