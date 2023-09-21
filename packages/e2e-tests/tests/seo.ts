@@ -6,3 +6,12 @@ export const shouldHavePageTitle = (options: { pageTitle: string }) => {
     await expect(page).toHaveTitle(options.pageTitle);
   });
 };
+
+export const navigateToLinkAndCheckTitle = (options: { linkName: string, pageTitle: string }) => {
+  return test("navigate to and check title", async ({ page }) => {
+    const link = await page.getByText(options.linkName);
+    await link.click();
+
+    await expect(page).toHaveTitle(options.pageTitle);
+  });
+};
