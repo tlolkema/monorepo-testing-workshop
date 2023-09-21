@@ -21,6 +21,10 @@
       "cache": false,
       "persistent": true,
       "inputs": ["tests/**/*.ts"]
+    },
+    "test": {
+      "cache": true,
+      "inputs": ["/**/*.ts", "/**/*.tsx"]
     }
   }
 }
